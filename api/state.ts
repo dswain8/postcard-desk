@@ -9,15 +9,15 @@
 // time. It's the same shape the Vite middleware returns, minus the parts
 // that would require filesystem access at runtime.
 
-import slack from "../data/seed/slack.json";
-import prs from "../data/seed/prs.json";
-import jira from "../data/seed/jira.json";
-import confluence from "../data/seed/confluence.json";
-import calendar from "../data/seed/calendar.json";
-import gdocs from "../data/seed/gdocs.json";
-import intention from "../data/seed/intention.json";
-import lastSynced from "../data/seed/last_synced.json";
-import tasks from "../data/seed/tasks.json";
+import slack from "../data/seed/slack.json" with { type: "json" };
+import prs from "../data/seed/prs.json" with { type: "json" };
+import jira from "../data/seed/jira.json" with { type: "json" };
+import confluence from "../data/seed/confluence.json" with { type: "json" };
+import calendar from "../data/seed/calendar.json" with { type: "json" };
+import gdocs from "../data/seed/gdocs.json" with { type: "json" };
+import intention from "../data/seed/intention.json" with { type: "json" };
+import lastSynced from "../data/seed/last_synced.json" with { type: "json" };
+import tasks from "../data/seed/tasks.json" with { type: "json" };
 
 export function GET(): Response {
   return Response.json(

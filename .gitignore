@@ -23,3 +23,4 @@ data/*.json
 
 # local refresh script — copy scripts/refresh.sh here and edit your placeholders
 scripts/refresh.local.sh
+.vercel
