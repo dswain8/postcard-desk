@@ -1,0 +1,26 @@
+[
+  {
+    "id": "seed-conf-1",
+    "space": "PRODUCT",
+    "title": "Notifications — Q3 Roadmap",
+    "by": "you",
+    "ago": "4h",
+    "kind": "edited"
+  },
+  {
+    "id": "seed-conf-2",
+    "space": "ENG",
+    "title": "Webhook Delivery — SLA & Retry Policy",
+    "by": "you",
+    "ago": "1d",
+    "kind": "edited"
+  },
+  {
+    "id": "seed-conf-3",
+    "space": "PRODUCT",
+    "title": "Digest Emails — User Research Synthesis",
+    "by": "you",
+    "ago": "3d",
+    "kind": "mentioned"
+  }
+]

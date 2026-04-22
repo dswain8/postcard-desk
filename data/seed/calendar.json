@@ -1,0 +1,34 @@
+[
+  {
+    "id": "seed-standup",
+    "time": "09:30",
+    "end": "09:45",
+    "title": "Team standup",
+    "loc": "Zoom",
+    "kind": "recurring"
+  },
+  {
+    "id": "seed-design-review",
+    "time": "11:00",
+    "end": "11:45",
+    "title": "Design review — digest email v3",
+    "loc": "Zoom",
+    "kind": "meeting"
+  },
+  {
+    "id": "seed-focus",
+    "time": "14:00",
+    "end": "16:00",
+    "title": "Focus block — spec writing",
+    "loc": "—",
+    "kind": "focus"
+  },
+  {
+    "id": "seed-1on1",
+    "time": "16:30",
+    "end": "17:00",
+    "title": "1:1 with Morgan",
+    "loc": "Zoom",
+    "kind": "meeting"
+  }
+]

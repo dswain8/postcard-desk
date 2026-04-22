@@ -1,0 +1,42 @@
+[
+  {
+    "id": "seed-doc-1",
+    "title": "PRD — Quiet Hours for Channel Notifications",
+    "kind": "doc",
+    "by": "you",
+    "ago": "1h",
+    "url": "https://example.com/docs/quiet-hours-prd"
+  },
+  {
+    "id": "seed-doc-2",
+    "title": "Weekly Update — Notifications Team",
+    "kind": "doc",
+    "by": "you",
+    "ago": "3h",
+    "url": "https://example.com/docs/weekly-update"
+  },
+  {
+    "id": "seed-doc-3",
+    "title": "Notifications Platform — Metrics Dashboard",
+    "kind": "sheet",
+    "by": "you",
+    "ago": "1d",
+    "url": "https://example.com/sheets/metrics"
+  },
+  {
+    "id": "seed-doc-4",
+    "title": "Digest Design — Figma Link Collection",
+    "kind": "doc",
+    "by": "you",
+    "ago": "2d",
+    "url": "https://example.com/docs/figma-collection"
+  },
+  {
+    "id": "seed-doc-5",
+    "title": "Q2 Retro — What We Learned",
+    "kind": "doc",
+    "by": "Morgan Patel",
+    "ago": "4d",
+    "url": "https://example.com/docs/q2-retro"
+  }
+]

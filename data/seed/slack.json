@@ -1,0 +1,42 @@
+[
+  {
+    "id": "seed-slack-1",
+    "who": "Morgan Patel",
+    "channel": "DM",
+    "msg": "Can you share the quiet-hours spec before tomorrow's review? Want to read it over coffee.",
+    "ago": "18m",
+    "urgent": true
+  },
+  {
+    "id": "seed-slack-2",
+    "who": "Priya",
+    "channel": "#notifications-platform",
+    "msg": "SMS gateway flaked twice overnight — opened INC-4412, primary failover worked as expected.",
+    "ago": "1h",
+    "urgent": false
+  },
+  {
+    "id": "seed-slack-3",
+    "who": "Jordan",
+    "channel": "#design-crit",
+    "msg": "Pushed v3 of the digest card mocks. Would love eyes before EOD — especially the empty state.",
+    "ago": "2h",
+    "urgent": false
+  },
+  {
+    "id": "seed-slack-4",
+    "who": "Customer Success",
+    "channel": "#cs-escalations",
+    "msg": "Acme asking about webhook retry semantics — are we still exponential or did we ship the cap?",
+    "ago": "3h",
+    "urgent": true
+  },
+  {
+    "id": "seed-slack-5",
+    "who": "Sam",
+    "channel": "DM",
+    "msg": "lunch thursday?",
+    "ago": "5h",
+    "urgent": false
+  }
+]

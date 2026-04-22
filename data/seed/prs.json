@@ -1,0 +1,29 @@
+[
+  {
+    "id": "seed-pr-142",
+    "num": 142,
+    "repo": "lumen/notifications",
+    "title": "webhooks: exponential backoff w/ jitter + retry cap",
+    "age": "2d",
+    "stale": false,
+    "reviewers": 2
+  },
+  {
+    "id": "seed-pr-138",
+    "num": 138,
+    "repo": "lumen/notifications",
+    "title": "digest-email: batch window config per workspace",
+    "age": "9d",
+    "stale": false,
+    "reviewers": 3
+  },
+  {
+    "id": "seed-pr-91",
+    "num": 91,
+    "repo": "lumen/docs",
+    "title": "Update webhooks.md with new rate-limit table",
+    "age": "23d",
+    "stale": true,
+    "reviewers": 1
+  }
+]

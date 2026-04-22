@@ -1,0 +1,25 @@
+# deps & build
+node_modules
+dist
+.vite
+tsconfig.tsbuildinfo
+
+# stray compiled .js next to .ts sources (Vite handles TS directly)
+src/**/*.js
+vite-plugins/**/*.js
+
+# os
+.DS_Store
+*.log
+
+# personal data — only the fictional seeds under data/seed/ are checked in.
+# your real Slack / Jira / GitHub / Calendar / Drive snapshots stay local.
+data/*.json
+
+# editor / local-only
+.claude/
+.vscode/
+.idea/
+
+# local refresh script — copy scripts/refresh.sh here and edit your placeholders
+scripts/refresh.local.sh

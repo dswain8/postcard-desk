@@ -1,0 +1,32 @@
+[
+  {
+    "id": "seed-jira-1",
+    "key": "NOTIF-412",
+    "title": "Digest email unsubscribe flow",
+    "status": "In Progress"
+  },
+  {
+    "id": "seed-jira-2",
+    "key": "NOTIF-418",
+    "title": "SMS provider failover — runbook + on-call drill",
+    "status": "To Do"
+  },
+  {
+    "id": "seed-jira-3",
+    "key": "NOTIF-391",
+    "title": "Webhook signature v2 — migration plan",
+    "status": "Review"
+  },
+  {
+    "id": "seed-jira-4",
+    "key": "NOTIF-445",
+    "title": "Quiet hours for channel notifications",
+    "status": "To Do"
+  },
+  {
+    "id": "seed-jira-5",
+    "key": "NOTIF-407",
+    "title": "Deprecate legacy /v1/send endpoint",
+    "status": "Blocked"
+  }
+]
