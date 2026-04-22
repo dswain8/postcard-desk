@@ -1,6 +1,10 @@
 # The Postcard Desk
 
+![The Postcard Desk](./docs/hero.png)
+
 A personal dashboard styled as a warm-wood desk covered in postcards — one per source: Slack, GitHub, Jira, Google Calendar, Google Drive, Confluence, plus a daily intention, a to‑do card, an affirmation, and a focus timer.
+
+**Live demo:** [postcard-desk.vercel.app](https://postcard-desk.vercel.app) (read-only, bundled with seed data)
 
 It's **local-first**. There's no backend, no OAuth flow, no API keys in this app. The data lives in JSON files on disk. The **refresh mechanism** is a Claude Code agent that pulls from your MCPs (Slack, GitHub, Google, Atlassian…) and overwrites the JSON files when you ask it to.
 
