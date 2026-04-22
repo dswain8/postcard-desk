@@ -1,0 +1,56 @@
+[
+  {
+    "id": "seed-task-1",
+    "title": "Ship quiet-hours spec",
+    "note": "Morgan wants to read it over coffee tomorrow",
+    "priority": 1,
+    "due": "today",
+    "done": false,
+    "created": 1745337600000
+  },
+  {
+    "id": "seed-task-2",
+    "title": "Review Jordan's v3 digest mocks",
+    "note": "focus on the empty state",
+    "priority": 2,
+    "due": "today",
+    "done": false,
+    "created": 1745331000000
+  },
+  {
+    "id": "seed-task-3",
+    "title": "Draft Q3 roadmap update",
+    "note": "",
+    "priority": 1,
+    "due": "week",
+    "done": false,
+    "created": 1745251200000
+  },
+  {
+    "id": "seed-task-4",
+    "title": "Prep 1:1 docs for skip-level",
+    "note": "",
+    "priority": 2,
+    "due": "week",
+    "done": false,
+    "created": 1745164800000
+  },
+  {
+    "id": "seed-task-5",
+    "title": "Morgan — spec review by Friday",
+    "note": "last pinged Tue",
+    "priority": 2,
+    "due": "waiting",
+    "done": false,
+    "created": 1745078400000
+  },
+  {
+    "id": "seed-task-6",
+    "title": "Send weekly update",
+    "note": "",
+    "priority": 2,
+    "due": "today",
+    "done": true,
+    "created": 1744992000000
+  }
+]
