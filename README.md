@@ -1,6 +1,6 @@
 # The Postcard Desk
 
-![The Postcard Desk](./docs/hero.png)
+![The Postcard Desk](./docs/demo.gif)
 
 A personal dashboard styled as a warm-wood desk covered in postcards — one per source: Slack, GitHub, Jira, Google Calendar, Google Drive, Confluence, plus a daily intention, a to‑do card, an affirmation, and a focus timer.
 
@@ -17,11 +17,11 @@ That's the whole idea: **Claude is the backend**. The React app is just a pretty
 Most "AI dashboards" try to be live — always-on webhooks, always-connected OAuth clients, always stale because the webhook you forgot to fix a month ago is silently broken. This flips the model:
 
 - The dashboard is a **snapshot**.
-- You (or a cron job) say *"refresh the desk"* to a Claude Code agent.
+- A cron job says *"refresh the desk"* to a headless Claude Code agent every minute during work hours.
 - Claude calls your MCPs in parallel, writes `data/*.json`, exits.
-- The React app re-reads the files on its next render.
+- The React app polls the files and re-renders.
 
-Cheap, simple, honest. The staleness is visible (the footer literally says *"Synced 10:06 PM"*). When a source drops, you notice — and ask Claude to fix the prompt instead of spelunking through someone else's webhook code.
+Cheap, simple, honest. The staleness is visible (the footer literally says *"Synced 10:06 PM"*). When a source drops, you notice — and you fix the prompt instead of spelunking through someone else's webhook code.
 
 ---
 
@@ -89,23 +89,18 @@ This is the fun part. You need [Claude Code](https://claude.com/claude-code) wit
 - **Google Drive MCP** — for recent docs
 - **Atlassian MCP** — for Jira + Confluence
 
-With those connected to Claude, you can just say:
-
-> *"Refresh the postcard desk."*
-
-…and Claude writes the JSON files. To make this deterministic (and cron-able), see the script:
+Once connected, ad-hoc refresh is a one-liner — say *"refresh the postcard desk"* to Claude and it writes the JSON files. But the real payoff is **letting cron do it for you**:
 
 ```bash
 cp scripts/refresh.sh scripts/refresh.local.sh
-# edit GH_USER, SLACK_HANDLE, DESK_DIR at the top of refresh.local.sh
+# edit GH_USER, SLACK_HANDLE, DESK_DIR at the top
 
-# run it manually…
-./scripts/refresh.local.sh
-
-# …or on a cron (every minute, self-gates to weekdays 9–21 local)
 crontab -e
-# * * * * * /ABSOLUTE/PATH/TO/postcard-desk/scripts/refresh.local.sh
+# runs every minute, self-gates to weekdays 9am–9pm local
+* * * * * /ABSOLUTE/PATH/TO/postcard-desk/scripts/refresh.local.sh
 ```
+
+That's it. The script invokes headless Claude Code with the refresh prompt, gated by work hours so it sleeps on evenings and weekends. The postcards stay within ~60 seconds of reality while you do real work.
 
 `refresh.local.sh` is in `.gitignore` so your real handles never land in the repo.
 
@@ -142,7 +137,7 @@ crontab -e
 
 - **No database.** JSON on disk is enough for a personal tool. Backup = `cp -r`.
 - **No auth / no accounts.** This is local-only. Don't expose `npm run dev` to the internet.
-- **No live webhooks.** You (or cron) call the refresh; staleness is a feature, not a bug.
+- **No live webhooks.** Cron pokes Claude on a schedule; staleness is a feature, not a bug.
 - **No framework.** Plain React + Vite. Zero state libraries beyond `useState`/`useReducer`.
 
 ---
