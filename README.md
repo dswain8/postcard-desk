@@ -1,6 +1,6 @@
 # The Postcard Desk
 
-![The Postcard Desk](./docs/demo.gif)
+![The Postcard Desk](./docs/hero.png)
 
 A personal dashboard styled as a warm-wood desk covered in postcards — one per source: Slack, GitHub, Jira, Google Calendar, Google Drive, Confluence, plus a daily intention, a to‑do card, an affirmation, and a focus timer.
 
