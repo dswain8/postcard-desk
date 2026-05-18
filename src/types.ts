@@ -18,6 +18,14 @@ export type SlackMessage = {
   msg: string;
   ago: string;
   urgent: boolean;
+  sourceRef?: {
+    workspaceId?: string;
+    channelId?: string;
+    channelName?: string;
+    threadTs?: string;
+    messageTs?: string;
+    permalink?: string;
+  };
 };
 
 export type PullRequest = {
@@ -82,6 +90,89 @@ export type DeskState = {
   docs: GoogleDoc[];
 };
 
+export type AgentSource = "slack";
+export type AgentAction = "draft_reply";
+export type AgentRunStatus =
+  | "queued"
+  | "running"
+  | "complete"
+  | "failed"
+  | "discarded";
+
+export type AgentRun = {
+  id: string;
+  source: AgentSource;
+  action: AgentAction;
+  status: AgentRunStatus;
+  itemId: string;
+  idempotencyKey: string;
+  createdAt: string;
+  updatedAt: string;
+  startedAt?: string;
+  completedAt?: string;
+  title: string;
+  itemPreview: string;
+  budget: {
+    maxUsd: number;
+    reservedUsd: number;
+    actualUsd?: number;
+  };
+  error?: string;
+};
+
+export type AgentDraft = {
+  id: string;
+  runId: string;
+  source: AgentSource;
+  action: AgentAction;
+  itemId: string;
+  createdAt: string;
+  title: string;
+  sourceLabel: string;
+  itemPreview: string;
+  draftText: string;
+  summary?: string;
+  contextFresh: boolean;
+  confidence: "low" | "medium" | "high";
+  warnings: string[];
+};
+
+export type AgentBudget = {
+  date: string;
+  dailyCapUsd: number;
+  perSpawnCapUsd: number;
+  spentUsd: number;
+  reservedUsd: number;
+  spawns: number;
+};
+
+export type AgentConfig = {
+  enabled: boolean;
+  dailyCapUsd: number;
+  perSpawnCapUsd: number;
+  workerTimeoutMs: number;
+};
+
+export type AgentState = {
+  runs: AgentRun[];
+  drafts: AgentDraft[];
+  budget: AgentBudget;
+  config: AgentConfig;
+};
+
+export type AgentSpawnRequest = {
+  source: AgentSource;
+  action: AgentAction;
+  item: SlackMessage;
+};
+
+export type AgentSpawnResponse = {
+  ok: true;
+  run: AgentRun;
+  draft?: AgentDraft;
+  budget: AgentBudget;
+};
+
 export type DeskApi = {
   setIntention: (v: string) => void;
   addTask: (t: Partial<Task> & { title: string }) => void;
@@ -96,4 +187,10 @@ export type DeskApi = {
   advanceJira: (id: string) => void;
   snoozeJira: (id: string) => void;
   refresh: () => Promise<void>;
+};
+
+export type AgentApi = {
+  spawnSlackDraft: (item: SlackMessage) => Promise<AgentSpawnResponse>;
+  refreshAgentState: () => Promise<void>;
+  discardDraft: (id: string) => Promise<void>;
 };

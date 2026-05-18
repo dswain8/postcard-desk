@@ -12,12 +12,22 @@ import { ConfluenceCard } from "./components/cards/ConfluenceCard";
 import { GDocsCard } from "./components/cards/GDocsCard";
 import { FocusTimerCard } from "./components/cards/FocusTimerCard";
 import { AffirmationCard } from "./components/cards/AffirmationCard";
+import { AgentTray } from "./components/AgentTray";
 
-// Change this to your name — shows up in the header greeting ("Morning, Alex").
-const OWNER_NAME = "Alex";
+// Change this to your name — shows up in the header greeting ("Morning, Debjeet").
+const OWNER_NAME = "Debjeet";
 
 export function App() {
-  const { state, api, loading, lastRefresh, lastSynced } = useDesk();
+  const {
+    state,
+    api,
+    agentState,
+    agentApi,
+    agentLoading,
+    loading,
+    lastRefresh,
+    lastSynced,
+  } = useDesk();
 
   return (
     <div style={{ minHeight: "100vh" }}>
@@ -56,7 +66,13 @@ export function App() {
           <ToDoCard state={state} api={api} rotation={-0.6} />
         </Draggable>
         <Draggable id="slack">
-          <SlackCard state={state} api={api} rotation={1.0} />
+          <SlackCard
+            state={state}
+            api={api}
+            agentState={agentState}
+            agentApi={agentApi}
+            rotation={1.0}
+          />
         </Draggable>
         <Draggable id="pr">
           <PRCard state={state} api={api} rotation={-1.4} />
@@ -71,6 +87,12 @@ export function App() {
           <GDocsCard state={state} rotation={1.2} />
         </Draggable>
       </div>
+
+      <AgentTray
+        agentState={agentState}
+        agentApi={agentApi}
+        loading={agentLoading}
+      />
 
       <DeskFooter lastRefresh={lastRefresh} lastSynced={lastSynced} />
     </div>

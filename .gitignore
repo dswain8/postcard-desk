@@ -16,6 +16,16 @@ vite-plugins/**/*.js
 # your real Slack / Jira / GitHub / Calendar / Drive snapshots stay local.
 data/*.json
 
+# local agent runtime — queued jobs, drafts, budget ledgers, and logs stay local.
+agent/*.jsonl
+agent/*.lock
+agent/*.log
+agent/config.json
+agent/runs/
+agent/drafts/
+agent/budget/
+agent/jobs/
+
 # editor / local-only
 .claude/
 .vscode/

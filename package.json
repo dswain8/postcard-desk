@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "agent:worker": "node scripts/agent-worker.mjs",
+    "agent:worker:once": "node scripts/agent-worker.mjs --once",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },
